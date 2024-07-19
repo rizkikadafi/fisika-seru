@@ -11,7 +11,7 @@ export default function Logo({ image, title }: Readonly<{ image: string, title: 
         width="40"
         height="40"
       />
-      <span className="text-gray-800 self-center text-xl font-semibold whitespace-nowrap">{title}</span>
+      <span className="text-gray-800 self-center text-lg font-semibold whitespace-nowrap">{title}</span>
     </Link>
   );
 }

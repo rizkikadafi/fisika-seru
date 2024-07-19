@@ -9,7 +9,7 @@ function Tagline() {
     <div className="sm:px-10 mt-[-5rem] sm:mt-[-13rem] md:mt-0 z-10 md:order-1">
       <h1 className={`${karma.className} text-3xl lg:text-5xl font-medium mb-3 w-[80%] md:w-full`}>Getting Quality Education is now more Easy</h1>
       <p className={`${karma.className} text-sm lg:text-lg text-gray-800 sm:w-[85%] md:w-full`}>It is a long established fact that a reader will be distracted by the readable content of a page when looking  </p>
-      <Link href="#" className="text-gray-800 bg-blue-400 hover:bg-blue-500 font-medium rounded-md text-sm mt-5 inline-block px-5 py-2 text-center border-2 border-blue-400">Study Now</Link>
+      <Link href="#" className="text-gray-800 bg-blue-400 hover:bg-blue-500 font-medium rounded-md text-sm lg:text-lg mt-5 inline-block px-8 py-3 text-center border-2 border-blue-400">Study Now</Link>
     </div>
   );
 }

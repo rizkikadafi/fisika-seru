@@ -14,8 +14,8 @@ export default function NavLinks({ isOpen }: { isOpen: boolean }) {
       { 'hidden': !isOpen, }
     )} id="navbar-sticky">
       <div className="flex justify-center mt-5 md:hidden">
-        <Link href="#" className="text-gray-800 bg-blue-400 hover:bg-blue-500 font-medium rounded-md text-sm mx-2 px-4 py-2 text-center border-2 border-blue-400">Daftar</Link>
-        <Link href="#" className="text-gray-800  hover:bg-blue-400 font-medium rounded-md text-sm mx-2 px-4 py-2 text-center border border-blue-400">Masuk</Link>
+        <Link href="#" className="text-gray-800 bg-blue-400 hover:bg-blue-500 font-medium rounded-md text-sm mx-2 px-4 py-2 text-center border-2 border-blue-400 lg:text-lg">Daftar</Link>
+        <Link href="#" className="text-gray-800  hover:bg-blue-400 font-medium rounded-md text-sm mx-2 px-4 py-2 text-center border border-blue-400 lg:text-lg">Masuk</Link>
       </div>
       <nav className="flex flex-col p-4 md:p-0 font-medium rounded-lg bg-gray-50 md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
         {links.map((link) => {
