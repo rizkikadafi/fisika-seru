@@ -19,8 +19,8 @@ export default function Navbar() {
         <Logo image="/logo.png" title="Fisika Seru" />
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <div className="hidden md:flex">
-            <Link href="#" className="text-gray-800 bg-blue-400 hover:bg-blue-500 font-medium rounded-md text-sm lg:text-lg mx-2 px-4 py-2 text-center border-2 border-blue-400">Daftar</Link>
-            <Link href="#" className="text-gray-800  hover:bg-blue-400 font-medium rounded-md text-sm lg:text-lg mx-2 px-4 py-2 text-center border border-blue-400">Masuk</Link>
+            <Link href="#" className="text-gray-800 bg-blue-400 hover:bg-blue-500 font-medium rounded-md text-sm mx-2 px-4 py-2 text-center border-2 border-blue-400">Daftar</Link>
+            <Link href="#" className="text-gray-800  hover:bg-blue-400 font-medium rounded-md text-sm mx-2 px-4 py-2 text-center border border-blue-400">Masuk</Link>
           </div>
           <button
             type="button"
