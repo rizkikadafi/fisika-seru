@@ -24,7 +24,7 @@ export default function RootLayout({
           sizes="200"
         />
       </head>
-      <body className={`${inter.className} h-[2000px] box-border`}>
+      <body className={`${inter.className} box-border`}>
         {children}
       </body>
     </html>
