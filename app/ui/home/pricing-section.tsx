@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 
 const pricingData = [
   {
+    key: 1,
     title: 'Thompson',
     monthPrice: '40.000',
     yearPrice: '450.000',
@@ -23,6 +24,7 @@ const pricingData = [
     ]
   },
   {
+    key: 2,
     title: 'Plank',
     monthPrice: '65.000',
     yearPrice: '690.000',
@@ -37,6 +39,7 @@ const pricingData = [
     ]
   },
   {
+    key: 3,
     title: 'Tesla',
     monthPrice: '80.000',
     yearPrice: '850.000',
@@ -71,7 +74,7 @@ function PricingCard({ title, monthPrice, yearPrice, checkedFeatures, uncheckedF
 
         {checkedFeatures.map((feature) => {
           return (
-            <li className="flex items-center">
+            <li className="flex items-center" key={feature}>
               <svg className="flex-shrink-0 w-4 h-4 text-blue-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20"> <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" /> </svg> <span className="text-base font-normal leading-tight text-gray-500 ms-3">{feature}</span>
             </li>
           );
@@ -79,7 +82,7 @@ function PricingCard({ title, monthPrice, yearPrice, checkedFeatures, uncheckedF
 
         {uncheckedFeatures.map((feature) => {
           return (
-            <li className="flex line-through decoration-gray-500">
+            <li className="flex line-through decoration-gray-500" key={feature}>
               <svg className="flex-shrink-0 w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
               </svg>
@@ -117,7 +120,7 @@ export default function PricingSection() {
 
           {pricingData.map((data) => {
             return (
-              <SwiperSlide className="px-8">
+              <SwiperSlide className="px-8" key={data.key}>
                 <PricingCard
                   title={data.title}
                   monthPrice={data.monthPrice}
