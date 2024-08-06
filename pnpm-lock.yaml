@@ -24,8 +24,8 @@ importers:
         specifier: ^5.2.1
         version: 5.2.1(react@18.3.1)
       swiper:
-        specifier: ^11.1.7
-        version: 11.1.7
+        specifier: 8.4.4
+        version: 8.4.4
     devDependencies:
       '@svgr/webpack':
         specifier: ^8.1.0
@@ -1296,6 +1296,9 @@ packages:
   dom-serializer@2.0.0:
     resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
 
+  dom7@4.0.6:
+    resolution: {integrity: sha512-emjdpPLhpNubapLFdjNL9tP06Sr+GZkrIHEXLWvOGsytACUrkbeIdjO5g77m00BrHTznnlcNqgmn7pCN192TBA==}
+
   domelementtype@2.3.0:
     resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
 
@@ -2260,6 +2263,9 @@ packages:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
 
+  ssr-window@4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
+
   stop-iteration-iterator@1.0.0:
     resolution: {integrity: sha512-iCGQj+0l0HOdZ2AEeBADlsRC+vsnDsZsbdSiH1yNSjcfKM7fdpCMfqAL/dwF5BLiw/XhRft/Wax6zQbhq2BcjQ==}
     engines: {node: '>= 0.4'}
@@ -2351,8 +2357,8 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
-  swiper@11.1.7:
-    resolution: {integrity: sha512-2EpQvhgKb+DNbi8/i9uRXhddivcMZQxca341t2NZYV1xroCR2p4YtYd3azuqRQ4OEBGcG4nv3aN24O80bMipow==}
+  swiper@8.4.4:
+    resolution: {integrity: sha512-jA/8BfOZwT8PqPSnMX0TENZYitXEhNa7ZSNj1Diqh5LZyUJoBQaZcqAiPQ/PIg1+IPaRn/V8ZYVb0nxHMh51yw==}
     engines: {node: '>= 4.7.0'}
 
   tailwindcss@3.4.6:
@@ -4012,6 +4018,10 @@ snapshots:
       domhandler: 5.0.3
       entities: 4.5.0
 
+  dom7@4.0.6:
+    dependencies:
+      ssr-window: 4.0.2
+
   domelementtype@2.3.0: {}
 
   domhandler@5.0.3:
@@ -5140,6 +5150,8 @@ snapshots:
 
   source-map-js@1.2.0: {}
 
+  ssr-window@4.0.2: {}
+
   stop-iteration-iterator@1.0.0:
     dependencies:
       internal-slot: 1.0.7
@@ -5253,7 +5265,10 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.0.1
 
-  swiper@11.1.7: {}
+  swiper@8.4.4:
+    dependencies:
+      dom7: 4.0.6
+      ssr-window: 4.0.2
 
   tailwindcss@3.4.6:
     dependencies:

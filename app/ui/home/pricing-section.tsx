@@ -1,7 +1,8 @@
 'use client';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation } from 'swiper/modules';
-import { FaArrowCircleRight, FaArrowCircleLeft, FaArrowLeft, FaArrowRight, FaAngleRight, FaAngleLeft } from "react-icons/fa";
+import { EffectCoverflow, Navigation } from 'swiper';
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -51,13 +52,13 @@ const pricingData = [
       'Akses komunitas Fisika Seru',
     ],
     uncheckedFeatures: []
-  }
+  },
 ]
 
 function PricingCard({ title, monthPrice, yearPrice, checkedFeatures, uncheckedFeatures }:
   { title: string, monthPrice: string, yearPrice: string, checkedFeatures: string[], uncheckedFeatures: string[] }) {
   return (
-    <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8">
+    <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg sm:p-8 mx-auto shadow-center-sm">
       <h5 className="mb-4 text-2xl font-medium text-gray-500">{title}</h5>
       <div className="flex items-baseline text-gray-900">
         <span className="text-xl font-semibold">Rp.</span>
@@ -65,9 +66,7 @@ function PricingCard({ title, monthPrice, yearPrice, checkedFeatures, uncheckedF
         <span className="ms-1 text-xl font-normal text-gray-500">/tahun</span>
       </div>
       <span className="ms-1 text-xl font-normal text-gray-500 block w-full text-center my-2">atau</span>
-      <div className="flex items-baseline text-gray-900">
-        <span className="text-xl font-semibold">Rp.</span>
-        <span className="text-3xl font-extrabold tracking-tight">{monthPrice}</span>
+      <div className="flex items-baseline text-gray-900"> <span className="text-xl font-semibold">Rp.</span> <span className="text-3xl font-extrabold tracking-tight">{monthPrice}</span>
         <span className="ms-1 text-xl font-normal text-gray-500">/bulan</span>
       </div>
       <ul role="list" className="space-y-5 my-7">
@@ -103,24 +102,28 @@ export default function PricingSection() {
         <h1 className="text-3xl lg:text-4xl font-medium mb-3">Paket Belajar</h1>
         <p className="text-sm lg:text-lg w-full md:w-[80%] mx-auto">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim.</p>
       </div>
-      <div className="mx-auto w-full relative">
+      <div className="mx-auto my-8 w-full relative px-3 sm:w-4/5 lg:w-full">
         <Swiper
           modules={[EffectCoverflow, Navigation]}
-          effect="coverflow"
           slidesPerView={1}
           navigation={{ nextEl: '.swiper-btn-next', prevEl: '.swiper-btn-prev' }}
-          loop={true}
+          effect="coverflow"
           centeredSlides={true}
-          wrapperClass="swiper-wrapper my-8 py-8 relative z-10"
+          initialSlide={1}
           coverflowEffect={{
+            stretch: 0,
             slideShadows: false,
+            rotate: 0
           }}
-          className="px-8"
+          breakpoints={{
+            1024: {
+              slidesPerView: 3,
+            }
+          }}
         >
-
           {pricingData.map((data) => {
             return (
-              <SwiperSlide className="px-8" key={data.key}>
+              <SwiperSlide className="px-8 py-3 sm:px-0" key={data.key}>
                 <PricingCard
                   title={data.title}
                   monthPrice={data.monthPrice}
@@ -131,10 +134,10 @@ export default function PricingSection() {
               </SwiperSlide>
             );
           })}
-          <div className="swiper-btn-prev cursor-pointer absolute left-0 bottom-1/2 z-20"><FaAngleLeft size={42} style={{ color: 'darkgray' }} /></div>
-          <div className="swiper-btn-next cursor-pointer absolute right-0 bottom-1/2 z-20"><FaAngleRight size={42} style={{ color: 'darkgray' }} /></div>
+          <div className="swiper-btn-prev cursor-pointer absolute left-[-.5rem] bottom-1/2 z-20"><FaAngleLeft size={42} style={{ color: 'darkgray' }} /></div>
+          <div className="swiper-btn-next cursor-pointer absolute right-[-.5rem] bottom-1/2 z-20"><FaAngleRight size={42} style={{ color: 'darkgray' }} /></div>
         </Swiper>
       </div>
-    </section >
+    </section>
   )
 }
